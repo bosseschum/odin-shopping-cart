@@ -94,10 +94,10 @@ src/
 **Phase 3: Page Logic**
 
 - [ ] Home: Hero section, banner, call-to-action link to `/shop`
-- [ ] Shop:
-  - [ ] Map fetched products into `ProductCard`
-  - [ ] Implement controlled input for quantity (validate: integers >= 1)
-  - [ ] Implement increment/decrement buttons syncing with input
+- [x] Shop:
+  - [x] Map fetched products into `ProductCard`
+  - [x] Implement controlled input for quantity (validate: integers >= 1)
+  - [x] Implement increment/decrement buttons syncing with input
 - [ ] Cart:
   - [ ] Render list of cart items or empty state message
   - [ ] Calculate subtotal and total price
