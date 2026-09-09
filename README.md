@@ -79,16 +79,16 @@ src/
 
 - [x] Initialize project with vite (npm create vite@latest . -- --template react)
 - [x] Install dependencies: react-router-dom, testing libraries, lucide icons, tailwind
-- [ ] Configure `createBrowserRouter` with `RootLayout` (`Navbar` + `<Outlet />`)
-- [ ] Create placeholder components for `Home`, `Shop` and `Cart`
+- [x] Configure `createBrowserRouter` with `RootLayout` (`Navbar` + `<Outlet />`)
+- [x] Create placeholder components for `Home`, `Shop` and `Cart`
 
 **Phase 2: State Management & API**
 
-- [ ] Create `CartContext` with actions:
-  - [ ] `addToCart(product, quantity`)
-  - [ ] `updateQuantity(productId, newQuantity)`
-  - [ ] `removeFromCart(productId)`
-  - [ ] `getCartCount()`
+- [x] Create `CartContext` with actions:
+  - [x] `addToCart(product, quantity`)
+  - [x] `increaseQuantity(product)/decreaseQuantity(product)`
+  - [x] `removeFromCart(productId)`
+  - [x] `getCartCount()`
 - [ ] Fetch product data from `https://fakeshopapi.com/products` with loading & error states
 
 **Phase 3: Page Logic**
