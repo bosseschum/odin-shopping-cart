@@ -53,6 +53,7 @@ function ProductCard({ product }) {
             type="button"
             className="px-3 py-1.5 text-stone-600 transition-colors hover:bg-stone-100"
             onClick={decreaseQuantity}
+            aria-label="Decrease quantity"
           >
             <Minus />
           </button>
@@ -66,14 +67,16 @@ function ProductCard({ product }) {
             type="button"
             className="px-3 py-1.5 text-stone-600 transition-colors hover:bg-stone-100"
             onClick={increaseQuantity}
+            aria-label="Increase quantity"
           >
             <Plus />
           </button>
         </div>
         <button
           type="button"
-          className="flex rounded-md bg-stone-900 p-2 text-sm font-medium text-white transition-colors hover:bg-stone-700"
+          className="flex rounded-md bg-stone-900 p-2 text-sm font-medium text-white transition-colors hover:bg-stone-700 active:animate-ping"
           onClick={() => addToCart(product, quantity)}
+          aria-label="Add to cart"
         >
           <ShoppingCartPlus />
         </button>
