@@ -89,7 +89,7 @@ src/
   - [x] `increaseQuantity(product)/decreaseQuantity(product)`
   - [x] `removeFromCart(productId)`
   - [x] `getCartCount()`
-- [ ] Fetch product data from `https://fakeshopapi.com/products` with loading & error states
+- [x] Fetch product data from `https://fakeshopapi.com/products` with loading & error states
 
 **Phase 3: Page Logic**
 
@@ -98,10 +98,10 @@ src/
   - [x] Map fetched products into `ProductCard`
   - [x] Implement controlled input for quantity (validate: integers >= 1)
   - [x] Implement increment/decrement buttons syncing with input
-- [ ] Cart:
-  - [ ] Render list of cart items or empty state message
-  - [ ] Calculate subtotal and total price
-  - [ ] Implement quantity modification and item removal
+- [x] Cart:
+  - [x] Render list of cart items or empty state message
+  - [x] Calculate subtotal and total price
+  - [x] Implement quantity modification and item removal
 
 **Phase 4: Testing & RTL**
 

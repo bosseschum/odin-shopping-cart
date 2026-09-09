@@ -29,7 +29,7 @@ function ShopPage() {
   return (
     <div>
       <h1>Welcome to the Shop Page!</h1>
-      <div>
+      <div className="grid grid-cols-4">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
