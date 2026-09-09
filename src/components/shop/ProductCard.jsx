@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useCart } from "../../context/useCart";
 
+import { Plus, Minus, ShoppingCartPlus } from "lucide-react";
+
 function ProductCard({ product }) {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
@@ -23,40 +25,57 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
-      <img className="w-full mb-2" src={product.image} alt="" />
-      <div className="px-6 py-4">
-        <h3 class="font-bold text-xl mb-2">{product.title}</h3>
-        <p className="text-gray-500 text-base">{product.description}</p>
-        <p className="text-sm text-green-400 border-solid rounded-4xl">
-          {product.category}
-        </p>
-        <p className="font-bold">€{product.price}</p>
-      </div>
-      <div>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          type="number"
-          onChange={handleInput}
-          value={quantity}
+    <div className="flex flex-col overflow-hidden rounded-lg border border-stone-200 bg-white transition-colors hover:border-stone-300">
+      <div className="flex aspect-square items-center justify-center overflow-hidden bg-stone-50 p-4">
+        <img
+          className="max-h-full max-w-full scale-110 object-contain"
+          src={product.image}
+          alt={product.title}
         />
+      </div>
+
+      <div className="flex flex-1 flex-col gap-1 px-4 pt-4">
+        <span className="text-xs uppercase tracking-wide text-stone-400">
+          {product.category}
+        </span>
+        <h3 className="line-clamp-2 font-medium text-stone-900">
+          {product.title}
+        </h3>
+        <p className="line-clamp-2 text-sm text-stone-500">
+          {product.description}
+        </p>
+        <p className="mt-1 font-semibold text-stone-900">€{product.price}</p>
+      </div>
+
+      <div className="flex justify-between items-center gap-2 p-4">
+        <div className="flex items-center rounded-md border border-stone-300">
+          <button
+            type="button"
+            className="px-3 py-1.5 text-stone-600 transition-colors hover:bg-stone-100"
+            onClick={decreaseQuantity}
+          >
+            <Minus />
+          </button>
+          <input
+            className="w-10 border-x border-stone-300 bg-transparent py-1.5 text-center text-sm text-stone-900 focus:outline-none"
+            type="number"
+            onChange={handleInput}
+            value={quantity}
+          />
+          <button
+            type="button"
+            className="px-3 py-1.5 text-stone-600 transition-colors hover:bg-stone-100"
+            onClick={increaseQuantity}
+          >
+            <Plus />
+          </button>
+        </div>
         <button
-          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
-          onClick={decreaseQuantity}
-        >
-          -
-        </button>
-        <button
-          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
-          onClick={increaseQuantity}
-        >
-          +
-        </button>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          type="button"
+          className="flex rounded-md bg-stone-900 p-2 text-sm font-medium text-white transition-colors hover:bg-stone-700"
           onClick={() => addToCart(product, quantity)}
         >
-          Add To Cart
+          <ShoppingCartPlus />
         </button>
       </div>
     </div>

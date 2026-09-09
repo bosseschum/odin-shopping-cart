@@ -3,12 +3,12 @@ import Navbar from "./Navbar";
 
 function RootLayout() {
   return (
-    <>
+    <div className="min-h-screen bg-stone-50">
       <Navbar />
-      <main className="p-4">
+      <main className="mx-auto max-w-6xl px-6 py-4">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
 
