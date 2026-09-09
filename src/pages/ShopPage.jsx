@@ -5,6 +5,17 @@ function ShopPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const displaydProducts =
+    selectedCategory === "all"
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
+
+  const categories = [
+    "all",
+    ...new Set(products.map((product) => product.category)),
+  ];
 
   useEffect(() => {
     setTimeout(async () => {
@@ -58,8 +69,25 @@ function ShopPage() {
         </p>
       </div>
 
+      <div className="flex gap-2 mb-2.5">
+        {categories.map((category) => (
+          <button
+            key={category}
+            type="button"
+            className={
+              selectedCategory === category
+                ? "flex items-center gap-1.5 rounded-md border border-black px-3 py-1.5 text-sm text-stone-700 transition-colors hover:border-stone-400 hover:text-stone-900"
+                : "flex items-center gap-1.5 rounded-md border border-stone-300 px-3 py-1.5 text-sm text-stone-700 transition-colors hover:border-stone-400 hover:text-stone-900"
+            }
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {products.map((product) => (
+        {displaydProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
